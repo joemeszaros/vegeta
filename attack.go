@@ -40,7 +40,7 @@ func attackCmd() command {
 	fs.IntVar(&opts.redirects, "redirects", vegeta.DefaultRedirects, "Number of redirects to follow. -1 will not follow but marks as success")
 	fs.Var(&opts.headers, "header", "Request header")
 	fs.Var(&opts.laddr, "laddr", "Local IP address")
-	fs.BoolVar(&opts.keepalive, "keepalive", true, "Use persistent connections")
+	fs.BoolVar(&opts.keepalive, "keepalive", false, "Use persistent connections")
 
 	return command{fs, func(args []string) error {
 		fs.Parse(args)
